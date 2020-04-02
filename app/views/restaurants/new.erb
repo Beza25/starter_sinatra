@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Create a New Restaurant                     :rest/index</h1>
+
+
+    <form action="/restaurants" method="POST">
+
+        <label for="name">Restaurant Name:</label>
+        <input type="text" name="name">
+        <label for="f_style">Food Style:</label>
+        <input type="text" name="f_style">
+        <br/>
+
+        <h3>Foods Avaliable in this Restaurant</h3>
+        <% 2.times do %> 
+            <li>
+                <label for="name">Menu Item:</label>
+                <input type="text" name="food[][name]">
+                <label for="ingredients"> Ingredients</label>
+                <input type="text" name="food[][ingredients]" >   
+            </li>
+            <br/>
+        <% end %>
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>

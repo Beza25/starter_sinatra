@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+    <head>
+       
+    </head>
+    <body>
+
+        <h1>food/new</h1>
+    
+
+        <form action="/foods" method="POST">
+            <label for="name">Food Name</label>
+            <input type="text" name="name">
+            <label for="ingredients"> Ingredients </label>
+            <input type="text" name="ingredients">
+
+            <label for="restaurant">Restaurant:</label>
+            <select multiple name="restaurants[][restaurant_id]" >
+
+
+                <% @restaurants.each do |r| %>
+                <option value="<%=r.id%>"> <%=r.name%> </option>            
+                    <%end%>
+            </select>
+            <input type="submit" name= "submit">
+         
+        </form>
+
+    </body>
+</html>
+

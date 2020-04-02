@@ -1,0 +1,19 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <h1>Edit <%=@restaurant.name%></h1>
+    <body>
+        <form action='/restaurants/<%=@restaurant.id%>' method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+        <label for="name"> Name </label>
+        <input type="text" name="name" value="<%=@restaurant.name%>">
+        <label for="f_style">Food Style</label>
+        <input type="text" name="f_style" value="<%=@restaurant.f_style%>">
+        <input type="submit" name="submit">
+        </form>
+    </body>
+    </html>

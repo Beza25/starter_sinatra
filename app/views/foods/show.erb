@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Food Detail      :food/show<</h1>
+    
+    <h1><%= @food.name %>   </h1>
+
+   <h2> <%= @food.ingredients %> </h2>
+
+   <h3>All the restaurants where you can eat <%=@food.name%> </h3>
+   <ol>
+        <% @food.restaurants.each do |r| %>
+        <li>
+          <a href="/restaurants/<%=r.id%>">
+                 <%= r.name %>
+           </a>
+         </li>
+        <% end %> 
+   </ol>
+   <form action="/foods/<%=@food.id%>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button  type="submit" value="Delete" > DELETE</button>
+    
+    </form>
+
+
+
+
+  <div><a href= "/foods/<%=@food.id%>/edit">Edit this Food Item</a> </div>
+   <br/>
+    <div><a href='/foods/new'>Create a new food!</a></div>
+    <br/>
+    <div><a href="/foods">Food List</a>
+    
+</body>
+</html>
